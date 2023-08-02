@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_create/models/lesson_model.dart';
+import 'package:flutter_create/models/lesson.dart';
 import 'package:flutter_create/widgets/lesson_card.dart';
-import '../../../models/program_model.dart';
+import '../../../models/program.dart';
 import '../../../widgets/program_card.dart';
 
 class LessonsList extends StatelessWidget {

@@ -1,16 +1,15 @@
 import 'dart:convert';
-import 'package:flutter_create/models/lesson_model.dart';
-import 'package:flutter_create/models/program_model.dart';
+import 'package:flutter_create/models/lesson.dart';
+import 'package:flutter_create/models/program.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
 
 
 class ApiService {
-  final String programsUrl =
-      'https://632017e19f82827dcf24a655.mockapi.io/api/programs';
-  final String lessonsUrl =
-      'https://632017e19f82827dcf24a655.mockapi.io/api/lessons';
+  static const String baseUrl = 'https://632017e19f82827dcf24a655.mockapi.io/api';
+  static const String programsUrl ='$baseUrl/programs';
+  static const String lessonsUrl = '$baseUrl/lessons';
 
   Future<ProgramModel> fetchPrograms() async {
     try {
@@ -18,13 +17,12 @@ class ApiService {
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body);
         ProgramModel programModel = ProgramModel.fromJson(jsonData);
-        print(programModel);
         return programModel;
       } else {
-        throw Exception('Failed to load programs: ${response.statusCode}');
+        throw Exception('[Error with Code -> ${response.statusCode}]: $response');
       }
     } catch (error) {
-      throw Exception('Failed to fetch programs: $error');
+      throw Exception('[Failed to fetch programs]: $error');
     }
   }
 
@@ -34,18 +32,17 @@ class ApiService {
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body);
         LessonModel lessonModel = LessonModel.fromJson(jsonData);
-        print(lessonModel.items.first.createdAt);
         return lessonModel;
       } else {
-        throw Exception('Failed to load lessons: ${response.statusCode}');
+        throw Exception('[Error with Code -> ${response.statusCode}]: $response');
       }
     } catch (error) {
-      throw Exception('Failed to fetch lessons: $error');
+      throw Exception('[Failed to fetch lessons]: $error');
     }
   }
 
 
-  //
+  // Just used here to convert date and time in desired format
   String formatDateTimeString(String dateTimeString) {
   DateTime dateTime = DateTime.parse(dateTimeString);
   String formattedDate = DateFormat('MMM d, EEEE').format(dateTime);

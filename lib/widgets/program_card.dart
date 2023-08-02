@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-import '../models/program_model.dart';
+import '../models/program.dart';
 
 class ProgramCard extends StatelessWidget {
   final Program program;
@@ -18,7 +18,7 @@ class ProgramCard extends StatelessWidget {
       width: width * 0.68,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
             offset: const Offset(2, 5),
@@ -32,10 +32,10 @@ class ProgramCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset("assets/pd1.png"),
+          Expanded(child: Image.asset("assets/pd1.png")),
           const SizedBox(height: 4),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -69,6 +69,7 @@ class ProgramCard extends StatelessWidget {
                     color: Colors.black54,
                   ),
                 ),
+                const SizedBox(height: 8)
               ],
             ),
           ),

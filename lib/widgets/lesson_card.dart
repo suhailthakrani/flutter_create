@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_create/models/lesson_model.dart';
+import 'package:flutter_create/models/lesson.dart';
 import 'package:flutter_create/services/api_service.dart';
 
 class LessonCard extends StatelessWidget {
@@ -19,7 +19,7 @@ class LessonCard extends StatelessWidget {
       width: width * 0.68,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
             offset: const Offset(2, 5),
@@ -33,12 +33,14 @@ class LessonCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'assets/pd1.png',
+          Expanded(
+            child: Image.asset(
+              'assets/pd1.png',
+            ),
           ),
           const SizedBox(height: 4),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,7 +89,8 @@ class LessonCard extends StatelessWidget {
                     else
                       const SizedBox()
                   ],
-                )
+                ),
+                const SizedBox(height: 8),
               ],
             ),
           ),

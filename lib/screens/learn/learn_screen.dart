@@ -5,8 +5,9 @@ class LearnScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("Learn Screen")),
+    return  Scaffold(
+      appBar: AppBar(),
+      body: const Center(child: Text("Learn Screen")),
     );
   }
 }

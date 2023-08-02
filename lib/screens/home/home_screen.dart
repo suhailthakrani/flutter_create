@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_create/models/lesson_model.dart';
-import 'package:flutter_create/models/program_model.dart';
+import 'package:flutter_create/models/lesson.dart';
+import 'package:flutter_create/models/program.dart';
 import 'package:flutter_create/screens/home/components/lessons_list.dart';
 import 'package:flutter_create/screens/home/components/program_list.dart';
 import 'package:flutter_create/services/api_service.dart';
@@ -53,7 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.only(
+                          left: 16, right: 16, bottom: 16),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -286,7 +287,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Text(
           "Hello, Priya!",
           style: TextStyle(
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.bold,
             color: Colors.black87,
             fontSize: 24,
           ),
