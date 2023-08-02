@@ -19,7 +19,7 @@ class LessonCard extends StatelessWidget {
       width: width * 0.68,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
             offset: const Offset(2, 5),
@@ -33,10 +33,8 @@ class LessonCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Image.asset(
-              'assets/pd1.png',
-            ),
+          Image.asset(
+            'assets/pd1.png',
           ),
           const SizedBox(height: 4),
           Container(
@@ -73,7 +71,7 @@ class LessonCard extends StatelessWidget {
                       convertedDate,
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
-                        fontSize: 13,
+                        fontSize: 12,
                         color: Colors.black54,
                       ),
                     ),

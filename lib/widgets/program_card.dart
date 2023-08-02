@@ -32,7 +32,7 @@ class ProgramCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(child: Image.asset("assets/pd1.png")),
+          Image.asset("assets/pd1.png"),
           const SizedBox(height: 4),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16),
